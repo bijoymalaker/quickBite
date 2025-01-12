@@ -11,6 +11,9 @@ import Topbar from '../components/Topbar.vue'
 import Categories from '../components/Categories.vue'
 import ResCaro from '../components/ResCaro.vue'
 import Add from '../components/Add.vue'
+import AboutUs from '../components/AboutUs.vue'
+import CountDown from '../components/CountDown.vue'
+import Footer from '../components/Footer.vue'
 export default {
     name: "Home",
     data() {
@@ -35,7 +38,7 @@ export default {
         };
     },
     components: {
-        Header, Topbar, Categories, ResCaro, Add
+        Header, Topbar, Categories, ResCaro, Add, AboutUs, CountDown, Footer
     }
 };
 
@@ -127,6 +130,9 @@ export default {
         <Categories />
         <ResCaro />
         <Add />
+        <AboutUs />
+        <CountDown />
+        <Footer />
 
 
 

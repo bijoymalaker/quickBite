@@ -397,9 +397,10 @@
 }
 .footer .btn-app-store,
 .footer .btn-google-play {
+  font-size: 4rem;
   background-color: transparent;
   border: none;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 .footer .btn-app-store:hover,
 .footer .btn-google-play:hover {
