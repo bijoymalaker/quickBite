@@ -10,6 +10,7 @@ import Header from '../components/Header.vue'
 import Topbar from '../components/Topbar.vue'
 import Categories from '../components/Categories.vue'
 import ResCaro from '../components/ResCaro.vue'
+import Add from '../components/Add.vue'
 export default {
     name: "Home",
     data() {
@@ -34,7 +35,7 @@ export default {
         };
     },
     components: {
-        Header, Topbar, Categories, ResCaro
+        Header, Topbar, Categories, ResCaro, Add
     }
 };
 
@@ -125,6 +126,7 @@ export default {
         
         <Categories />
         <ResCaro />
+        <Add />
 
 
 
