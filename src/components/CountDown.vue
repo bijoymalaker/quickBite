@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col stats-item" v-for="stat in stats" :key="stat.label">
-                    <h2 :class=" {'animate': isAnimating}" class=" stats-number">{{ stat.animatedValue }}+</h2>
+                    <h2 :class=" {'animate': isAnimating}" class="stats-number">{{ stat.animatedValue }}+</h2>
                     <h4 class="stats-label">{{ stat.label }}</h4>
                 </div>
             </div>
