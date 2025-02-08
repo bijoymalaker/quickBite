@@ -6,14 +6,11 @@ import Rectangle7 from '../assets/imgs/Rectangle7.png'
 import Rectangle9 from '../assets/imgs/Rectangle9.png'
 
 // Components
-import Header from '../components/Header.vue'
-import Topbar from '../components/Topbar.vue'
 import Categories from '../components/Categories.vue'
 import ResCaro from '../components/ResCaro.vue'
 import Add from '../components/Add.vue'
 import AboutUs from '../components/AboutUs.vue'
 import CountDown from '../components/CountDown.vue'
-import Footer from '../components/Footer.vue'
 export default {
     name: "Home",
     data() {
@@ -38,7 +35,7 @@ export default {
         };
     },
     components: {
-        Header, Topbar, Categories, ResCaro, Add, AboutUs, CountDown, Footer
+         Categories, ResCaro, Add, AboutUs, CountDown
     }
 };
 
@@ -47,9 +44,8 @@ export default {
 
 
 <template>
-    <div class="h-100">
-        <Topbar />
-        <Header />
+    <div>
+        
         <!-- Top banner part start  -->
         <section>
             <div class="container my-5">
@@ -132,7 +128,6 @@ export default {
         <Add />
         <AboutUs />
         <CountDown />
-        <Footer />
 
 
 

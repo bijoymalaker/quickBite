@@ -35,7 +35,7 @@
           </ul>
 
           <!-- Login/Signup Button -->
-          <a href="#" class="btn login-signup-btn ms-lg-3 text-black">Login/Signup</a>
+          <router-link to="/login" class="login-signup-btn ms-lg-3"><font-awesome-icon icon="fa-solid fa-person-circle-plus" class="me-2 text-warning" />Login/Signup</router-link>
         </div>
       </div>
     </nav>

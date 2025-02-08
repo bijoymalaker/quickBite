@@ -14,18 +14,18 @@
 
             <!-- Location Section -->
             <div class="d-flex align-items-center">
-                <span class="location-text"><i class="fa-solid fa-location-dot me-3"></i>Regent Street, A4, A4201,
+                <span class="location-text"><font-awesome-icon icon="fa-solid fa-location-dot" class="me-2"/>Regent Street, A4, A4201,
                     London</span>
                 <a href="#" class="change-location ms-2">Change Location</a>
             </div>
 
             <!-- Cart Section -->
             <div class="cart-info">
-                <span class="cart-icon px-3"><i class="fa-solid fa-cart-shopping"></i></span>
+                <span class="cart-icon px-3"><font-awesome-icon icon="fa-solid fa-basket-shopping" /></span>
                 <!-- Emoji or icon for the cart -->
                 <span class="px-3 border-end border-2">23 Items</span>
                 <span class="px-3 border-end border-2">GBP 79.89</span>
-                <span class="dropdown-icon ms-3"><i class="fa-solid fa-arrow-down text-white"></i></span>
+                <span class="cart-icon ms-3 border-0"><font-awesome-icon icon="fa-regular fa-circle-down" /></span>
             </div>
 
         </div>
