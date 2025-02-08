@@ -53,7 +53,7 @@ export default {
                     <!-- Text and Search Section -->
                     <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
                         <p>Order Restaurant food, takeaway and groceries.</p>
-                        <h1>Feast Your Senses, <span>Fast and Fresh</span></h1>
+                        <h1>Feast Your Senses, <br/> <span>Fast and Fresh</span></h1>
                         <p>Enter a postcode to see what we deliver</p>
                         <div class="input-group mb-3 search-input">
                             <input type="text" class="form-control" placeholder="e.g. EC4R 3TE">
