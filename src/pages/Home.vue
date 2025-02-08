@@ -47,7 +47,7 @@ export default {
 
 
 <template>
-    <div>
+    <div class="h-100">
         <Topbar />
         <Header />
         <!-- Top banner part start  -->

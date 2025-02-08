@@ -53,13 +53,14 @@
 
 /* Navbar Styles */
 .navbar-brand {
+  font-size: 1.7rem !important;
   font-weight: bold;
   display: flex;
   align-items: center;
 }
 .navbar-brand img {
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 60px;
   margin-right: 5px;
 }
 .nav-item .nav-link {

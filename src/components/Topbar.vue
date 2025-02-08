@@ -7,9 +7,9 @@
             <!-- Promo Section -->
             <div class="d-flex align-items-center">
                 <!-- <font-awesome-icon icon="fa-solid fa-star" /> -->
-                <font-awesome-icon icon="fa-regular fa-star" class="red"/>
+                <font-awesome-icon icon="fa-regular fa-star" class="red me-2"/>
                 <span>Get 5% Off your first order,</span>
-                <span class="promo-text ms-1">Promo: ORDERS</span>
+                <a href="#" class="change-location ms-2">Promo: ORDERS</a>
             </div>
 
             <!-- Location Section -->
