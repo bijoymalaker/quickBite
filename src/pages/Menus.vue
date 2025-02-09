@@ -1,16 +1,14 @@
 <template>
     <div>
-        <Topbar/>
-        <Header/>
         <h1>Menu page name</h1>
     </div>
 </template>
 <script >
-    import Header from '../components/Header.vue'
-    import Topbar from '../components/Topbar.vue'
+
     export default {
+        name: "Menus",
         components: {
-            Header, Topbar
+            
         }
     };
 

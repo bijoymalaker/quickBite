@@ -1,7 +1,5 @@
 <template lang="">
   <div>
-    <Topbar />
-    <Header />
     <div class="container bg-light p-4 d-flex justify-content-between align-items-center">
       <div>
         <h2>Tandoori Pizza London</h2>
@@ -16,7 +14,7 @@
     </div>
 
 
-    <div class="list-group">
+    <div class="list-group container">
         <button class="list-group-item list-group-item-action active">Pizzas</button>
         <button class="list-group-item list-group-item-action">Garlic Bread</button>
         <button class="list-group-item list-group-item-action">Calzone</button>
@@ -27,13 +25,10 @@
   </div>
 </template>
 <script>
-import Header from "../components/Header.vue";
-import Topbar from "../components/Topbar.vue";
 export default {
     name: "Restaurants",
     components: {
-        Header,
-        Topbar,
+
     },
 };
 </script>
