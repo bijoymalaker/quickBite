@@ -15,7 +15,7 @@ export default {
     name: "Home",
     data() {
         return {
-            foodName : ['Vegan','Sushi','Pizza & Fast food','Others'],
+            foodName: ['Vegan', 'Sushi', 'Pizza & Fast food', 'Others'],
             resName: [{
                 name: 'Chef Burgers London',
                 discount: '-40%',
@@ -35,7 +35,7 @@ export default {
         };
     },
     components: {
-         Categories, ResCaro, Add, AboutUs, CountDown
+        Categories, ResCaro, Add, AboutUs, CountDown
     }
 };
 
@@ -45,7 +45,6 @@ export default {
 
 <template>
     <div>
-        
         <!-- Top banner part start  -->
         <section>
             <div class="container my-5">
@@ -53,7 +52,7 @@ export default {
                     <!-- Text and Search Section -->
                     <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
                         <p>Order Restaurant food, takeaway and groceries.</p>
-                        <h1>Feast Your Senses, <br/> <span>Fast and Fresh</span></h1>
+                        <h1>Feast Your Senses, <br /> <span>Fast and Fresh</span></h1>
                         <p>Enter a postcode to see what we deliver</p>
                         <div class="input-group mb-3 search-input">
                             <input type="text" class="form-control" placeholder="e.g. EC4R 3TE">
@@ -90,39 +89,37 @@ export default {
 
 
         <section>
-        <div class="container my-5">
-            <!-- Header Section -->
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2 class="deals-header">Up to -40% 🍔 Order.uk exclusive deals</h2>
-                <!-- Category Filter -->
-                <div class="category-filter">
-                    <a v-for="item in foodName" :key="item" href="#" class="" > {{ item }}</a>
-                    
-                </div>
-            </div>
+            <div class="container my-5">
+                <!-- Header Section -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="deals-header">Up to -40% 🍔 QuickBite exclusive deals</h2>
+                    <!-- Category Filter -->
+                    <div class="category-filter">
+                        <a v-for="item in foodName" :key="item" href="#" class=""> {{ item }}</a>
 
-            <!-- Deals Cards -->
-            <div class="row g-4">
-                <!-- Card 1 -->
-                <div class="col-md-4" v-for="item in resName" :key="item.name">
-                    <div class="card deal-card">
-                        <div class="position-relative">
-                            <img v-bind:src="item.img" class="card-img-top" :alt="item.name">
-                            <span class="deals-card-overlay"></span>
-                            <span class="discount-badge">{{ item.discount }}</span>
-                        </div>
-                        <div class="card-body">
-                            <p class="text-muted mb-1">Restaurant</p>
-                            <p class="restaurant-name">{{ item.name }}</p>
-                        </div>
                     </div>
                 </div>
 
-                
+                <!-- Deals Cards -->
+                <div class="row g-4">
+                    <!-- Card 1 -->
+                    <div class="col-md-4" v-for="item in resName" :key="item.name">
+                        <div class="card deal-card">
+                            <div class="position-relative">
+                                <img v-bind:src="item.img" class="card-img-top" :alt="item.name">
+                                <span class="deals-card-overlay"></span>
+                                <span class="discount-badge">{{ item.discount }}</span>
+                            </div>
+                            <div class="card-body">
+                                <p class="text-muted mb-1">Restaurant</p>
+                                <p class="restaurant-name">{{ item.name }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
         </section>
-        
+
         <Categories />
         <ResCaro />
         <Add />

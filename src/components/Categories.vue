@@ -3,7 +3,7 @@
     <section>
       <div class="container my-5">
         <!-- Header Section -->
-        <h2 class="category-header mb-4">Order.uk Popular Categories 🍔</h2>
+        <h2 class="category-header mb-4">QuickBite Popular Categories 🍔</h2>
 
         <!-- Categories Carousel -->
 
@@ -44,14 +44,6 @@ export default {
       },
   data() {
     return {
-      foodName: [
-        "Burgers & Fast food",
-        "Salads",
-        "Pasta & Casuals",
-        "Pizza",
-        "Breakfast",
-        "Soups",
-      ],
       categories: [
         {
           name: "Burgers & Fast food",
