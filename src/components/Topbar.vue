@@ -1,13 +1,12 @@
 <template lang="">
-    
-        <!-- Top Bar -->
+      <!-- Top Bar -->
     <div class="container-fluid bg-light pb-2">
         <div class="container d-flex align-items-center justify-content-between">
 
             <!-- Promo Section -->
             <div class="d-flex align-items-center topbar-font">
                 <!-- <font-awesome-icon icon="fa-solid fa-star" /> -->
-                <font-awesome-icon icon="fa-regular fa-star" class="red me-2"/>
+                <font-awesome-icon icon="fa-solid fa-star" class="red me-2"/>
                 <span>Get 5% Off your first order,</span>
                 <a href="#" class="change-location ms-2">Promo: ORDERS</a>
             </div>
@@ -33,9 +32,9 @@
 
 </template>
 <script>
-    
 
     export default {
+        name: "Topbar",
         
     }
 </script>
