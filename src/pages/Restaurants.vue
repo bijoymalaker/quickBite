@@ -1,17 +1,18 @@
 <template>
   <div>
-    <div class="container bg-light p-4 d-flex justify-content-between align-items-center position-relative">
+    <div class="container bg-light p-4 d-flex justify-content-between align-items-center position-relative res-bg">
       <div>
         <h2>Tandoori Pizza London</h2>
         <p>Minimum Order: £12 | Delivery in 20-30 Minutes</p>
         <button class="btn btn-warning">Open until 2:00 AM</button>
       </div>
-      <div class="text-center bg-warning p-4 rating-bridge">
+      <div class="text-center bg-white p-4 rating-bridge">
+        <h3>{{ rating }}</h3>
         <div class="star-rating">
-          <span v-for="(star, index) in 5" :key="index" class="star">
-            <i v-if="rating >= index + 1" class="fas fa-star text-warning"></i>
-            <i v-else-if="rating > index && rating < index + 1" class="fas fa-star-half-alt text-warning"></i>
-            <i v-else class="far fa-star text-muted"></i>
+          <span v-for="(star, index) in 5" :key="star" class="star">
+            <font-awesome-icon icon="fa-solid fa-star" v-if="rating >= index + 1" class=" text-warning" />
+            <font-awesome-icon icon="fa-solid fa-star-half-stroke" v-else-if="rating > index && rating < index +1" class=" text-warning" />
+            <font-awesome-icon icon="fa-solid fa-star" v-else class=" text-muted" />
           </span>
         </div>
         <p>1,200+ reviews</p>
@@ -82,8 +83,6 @@
 <script>
 
 
-import { defineProps } from "vue";
-
 //images import
 
 import Rectangle53 from "../assets/imgs/restuarent/Rectangle53.png";
@@ -101,15 +100,14 @@ import Rectangle15 from "../assets/imgs/restuarent/Rectangle15.png";
 
 export default {
   name: "Restaurants",
+  props: {
+    rating: {
+      type: Number,
+      default: 2.5 // Pass a rating like 3.5, 4.0, etc.
+    }
+  },
   setup() {
-    const props = defineProps({
-      rating: {
-        type: Number,
-        default: 3.5 // Pass a rating like 3.5, 4.0, etc.
-      }
-    });
-
-    return { props };
+    // setup logic here
   },
   data() {
     return {
@@ -205,10 +203,17 @@ export default {
   };
 </script>
 <style scoped>
+  .res-bg {
+    background-image: linear-gradient(rgba(226, 226, 226, 0.5), rgba(226, 226, 226, 0.5)),
+      url("../assets/imgs/restuarent/");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
   .rating-bridge {
     border-radius: 10px;
     position: absolute;
-    top: 65%;
+    top: 60%;
     right: 50%;
   }
 </style>

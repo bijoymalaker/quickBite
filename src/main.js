@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
 import './style.css'
 import router from './router'
-import "@fortawesome/fontawesome-free/css/all.min.css";
 
 
 
@@ -15,13 +14,13 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
-import { faUserSecret, faLocationDot, faBasketShopping, faPersonCirclePlus } from '@fortawesome/free-solid-svg-icons'
+import { faUserSecret, faLocationDot, faBasketShopping, faPersonCirclePlus, faStarHalfStroke, faStar } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faTwitter, faInstagram, faYoutube, faAppStore, faGooglePlay } from '@fortawesome/free-brands-svg-icons'
-import { faStar, faCircleDown } from '@fortawesome/free-regular-svg-icons'
+import { faCircleDown } from '@fortawesome/free-regular-svg-icons'
 
 
 /* add icons to the library */
-library.add(faUserSecret, faStar, faFacebookF, faTwitter, faInstagram, faYoutube, faAppStore, faGooglePlay, faLocationDot, faBasketShopping, faCircleDown, faPersonCirclePlus)
+library.add(faUserSecret, faStar, faStar, faFacebookF, faTwitter, faInstagram, faYoutube, faAppStore, faGooglePlay, faLocationDot, faBasketShopping, faCircleDown, faPersonCirclePlus, faStarHalfStroke)
 
 
 
