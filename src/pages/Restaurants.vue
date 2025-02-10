@@ -23,6 +23,7 @@
     <div class="container">
       <div class="row my-4 align-items-baseline">
         <div class="col-12 col-md-2 mb-3 mb-md-0">
+          <h1>Menus</h1>
           <!-- Tab navs -->
           <div class="d-md-none">
             <select class="form-select" v-model="selectedFood" @change="selectFood(selectedFood)">
@@ -87,11 +88,14 @@
         </div>
       </div>
     </div>
+
+    <ResDetails />
   </div>
 </template>
 <script>
 
 import ShoppingBacket from "../components/ShoppingBacket.vue";
+import ResDetails from "../components/ResDetails.vue";
 
 
 //images import
@@ -210,7 +214,7 @@ export default {
       };
     },
     components: {
-      ShoppingBacket
+      ShoppingBacket, ResDetails
     },
   };
 </script>
