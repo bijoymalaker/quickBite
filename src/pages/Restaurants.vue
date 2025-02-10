@@ -205,10 +205,10 @@ export default {
   };
 </script>
 <style scoped>
-.rating-bridge {
-  border-radius: 10px;
-  position: absolute;
-  top: 65%;
-  right: 50%;
-}
+  .rating-bridge {
+    border-radius: 10px;
+    position: absolute;
+    top: 65%;
+    right: 50%;
+  }
 </style>
