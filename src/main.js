@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
 import './style.css'
 import router from './router'
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 
 
 /* import the fontawesome core */
