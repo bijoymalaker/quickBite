@@ -1,6 +1,6 @@
 <template>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top py-0">
       <div class="container">
         <!-- Logo and Brand Name -->
         <a class="navbar-brand" href="#">
@@ -16,7 +16,7 @@
 
         <!-- Navbar Links -->
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav mb-3 mb-lg-0">
             <li class="nav-item">
               <router-link to="/" class=" nav-link">Home</router-link>
             </li>

@@ -21,10 +21,15 @@
     </div>
 
     <div class="container">
-      <div class="row my-4">
-        <div class="col-4">
+      <div class="row my-4 align-items-baseline">
+        <div class="col-12 col-md-2 mb-3 mb-md-0">
           <!-- Tab navs -->
-          <div class="nav flex-column nav-pills text-center nav-item list-group" id="v-pills-tab" role="tablist"
+          <div class="d-md-none">
+            <select class="form-select" v-model="selectedFood" @change="selectFood(selectedFood)">
+              <option v-for="(food, index) in foodCategory" :key="index" :value="food">{{ food }}</option>
+            </select>
+          </div>
+          <div class="nav flex-column nav-pills text-center nav-item list-group d-none d-md-flex" id="v-pills-tab" role="tablist"
             aria-orientation="vertical">
             <a v-for="(food, index) in foodCategory" :key="index" class="nav-link list-group-item"
               :class="{ active: selectedFood === food }" id="v-pills-link1-tab" data-bs-toggle="pill"
@@ -33,13 +38,13 @@
           </div>
         </div>
 
-        <div class="col-8">
+        <div class="col-12 col-md-6">
           <h1>All</h1>
           <div class="tab-content" id="v-pills-tabContent">
             <div class="tab-pane fade show active" id="v-pills-link1" role="tabpanel"
               aria-labelledby="v-pills-link1-tab">
               <div class="row">
-                <div class="card p-3 shadow-sm my-4" v-for="(food, index) in foodName" :key="index">
+                <div class="card p-3 shadow-sm my-3" v-for="(food, index) in foodName" :key="index">
                   <div class="d-flex align-items-center">
                     <div class="me-3">
                       <h4 class="fw-bold">{{ food.name }}</h4>
@@ -76,11 +81,17 @@
             </div>
           </div>
         </div>
+
+        <div class="col-0 col-md-4">
+          <ShoppingBacket />
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+
+import ShoppingBacket from "../components/ShoppingBacket.vue";
 
 
 //images import
@@ -94,6 +105,7 @@ import Ellipse64 from "../assets/imgs/restuarent/Ellipse64.png";
 import Ellipse65 from "../assets/imgs/restuarent/Ellipse65.png";
 import Rectangle13 from "../assets/imgs/restuarent/Rectangle13.png";
 import Rectangle15 from "../assets/imgs/restuarent/Rectangle15.png";
+
 
 
 
@@ -198,14 +210,14 @@ export default {
       };
     },
     components: {
-
+      ShoppingBacket
     },
   };
 </script>
 <style scoped>
   .res-bg {
     background-image: linear-gradient(rgba(226, 226, 226, 0.5), rgba(226, 226, 226, 0.5)),
-      url("../assets/imgs/restuarent/");
+      url("../assets/imgs/restuarent/Rectangle44.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
