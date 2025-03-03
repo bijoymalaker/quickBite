@@ -26,26 +26,23 @@
           <h1>Menus</h1>
           <!-- Tab navs -->
           <div class="d-md-none">
-            <select class="form-select" v-model="selectedFood" @change="selectFood(selectedFood)">
-              <option v-for="(food, index) in foodCategory" :key="index" :value="food">{{ food }}</option>
+            <select class="form-select">
+              <option v-for="(food, index) in foodCategory" :key="index" :value="food" :class="{ active:food === selectFoodCategory }">{{ food }}</option>
             </select>
           </div>
           <div class="nav flex-column nav-pills text-center nav-item list-group d-none d-md-flex" id="v-pills-tab" role="tablist"
             aria-orientation="vertical">
             <a v-for="(food, index) in foodCategory" :key="index" class="nav-link list-group-item"
-              :class="{ active: selectedFood === food }" id="v-pills-link1-tab" data-bs-toggle="pill"
-              href="#v-pills-link1" role="tab" aria-controls="v-pills-link1" aria-selected="selectedFood === food"
-              @click="selectFood(food)">{{ food }}</a>
+              :class="{ active: food === selectFoodCategory, cursor: true }" @click=" selectFoodCategory = food ">{{ food }}</a>
           </div>
         </div>
 
         <div class="col-12 col-md-6">
-          <h1>All</h1>
-          <div class="tab-content" id="v-pills-tabContent">
-            <div class="tab-pane fade show active" id="v-pills-link1" role="tabpanel"
-              aria-labelledby="v-pills-link1-tab">
-              <div class="row">
-                <div class="card p-3 shadow-sm my-3" v-for="(food, index) in foodName" :key="index">
+          <h1>{{ selectFoodCategory }}</h1>
+          <div class="tab-content">
+            <div class="tab-pane fade show active">
+              <div class="row" v-if="filteredFood.length > 0">
+                <div class="card p-3 shadow-sm my-3" v-for="food in filteredFood" :key="food.id">
                   <div class="d-flex align-items-center">
                     <div class="me-3">
                       <h4 class="fw-bold">{{ food.name }}</h4>
@@ -57,7 +54,6 @@
                     <img :src="food.img" :alt="food.name" class="rounded-circle object-fit-cover" width="80"
                       height="80" />
                   </div>
-
                   <div class="mt-3 d-flex flex-wrap gap-2">
                     <button class="btn btn-dark">Small &#163{{ food.Small }}</button>
                     <button class="btn btn-success">Medium &#163{{ food.Medium }}</button>
@@ -66,19 +62,9 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="tab-pane fade" id="v-pills-link2" role="tabpanel" aria-labelledby="v-pills-link2-tab">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Est, excepturi illo neque eaque error corrupti laborum alias
-              veniam natus molestias in cupiditate magnam ratione voluptatem!
-            </div>
-            <div class="tab-pane fade" id="v-pills-link3" role="tabpanel" aria-labelledby="v-pills-link3-tab">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Aspernatur, illum.
-            </div>
-            <div class="tab-pane fade" id="v-pills-link4" role="tabpanel" aria-labelledby="v-pills-link4-tab">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Sequi quasi dicta qui porro eligendi nam doloribus vel minus ullam quam!
+              <div class="text-center" v-else>
+                  <h2>No Food Found</h2>
+              </div>
             </div>
           </div>
         </div>
@@ -109,6 +95,7 @@ import Ellipse64 from "../assets/imgs/restuarent/Ellipse64.png";
 import Ellipse65 from "../assets/imgs/restuarent/Ellipse65.png";
 import Rectangle13 from "../assets/imgs/restuarent/Rectangle13.png";
 import Rectangle15 from "../assets/imgs/restuarent/Rectangle15.png";
+import { computed } from "vue";
 
 
 
@@ -127,10 +114,13 @@ export default {
   },
   data() {
     return {
+      selectFoodCategory: "All",
       foodCategory: ["All", "Pizzas", "Garlic Bread", "Calzone", "Kebabas", "Salads", "Cold drinks", "Happy Meal", "Desserts", "Hot drinks", "Sauces", "Orbit®"],
         foodName: [
           {
+            id: 1,
             name: "Farm House Xtreme Pizza",
+            food: "Pizzas",
             img: Rectangle53,
             details: "1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium-sized French fries, 2 cold drinks",
             Small: 21.99,
@@ -139,7 +129,9 @@ export default {
             XLarge: 32.99,
           },
           {
-            name: "Deluxe Pizza",
+            id: 2,
+            name: "Deluxe Bread",
+            food: "Garlic Bread",
             img: Ellipse3,
             details: "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks",
             Small: 21.90,
@@ -148,7 +140,9 @@ export default {
             XLarge: 32.90,
           },
           {
-            name: "Tandoori Pizza",
+            id: 3,
+            name: "Tandoori Calzone",
+            food : "Calzone",
             img: Ellipse6,
             details: "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks",
             Small: 21.90,
@@ -157,7 +151,9 @@ export default {
             XLarge: 32.90,
           },
           {
-            name: "Pepperoni Pizza",
+            id: 4,
+            name: "Pepperoni Kebabas",
+            food: "Kebabas",
             img: Ellipse61,
             details: "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks",
             Small: 21.90,
@@ -166,7 +162,9 @@ export default {
             XLarge: 32.90,
           },
           {
-            name: "Margherita Pizza",
+            id: 5,
+            name: "Margherita Salads",
+            food : "Salads",
             img: Ellipse62,
             details: "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks",
             Small: 21.90,
@@ -175,7 +173,9 @@ export default {
             XLarge: 32.90,
           },
           {
-            name: "Hawaiian Pizza",
+            id: 6,
+            name: "Hawaiian Desserts",
+            food : "Desserts",
             img: Ellipse64,
             details: "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks",
             Small: 21.90,
@@ -184,6 +184,7 @@ export default {
             XLarge: 32.90,
           },
           {
+            id: 7,
             name: "Vegetarian Pizza",
             img: Ellipse65,
             details: "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks",
@@ -193,6 +194,7 @@ export default {
             XLarge: 32.90,
           },
           {
+            id: 8,
             name: "Meat Feast Pizza",
             img: Rectangle13,
             details: "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks",
@@ -202,6 +204,7 @@ export default {
             XLarge: 32.90,
           },
           {
+
             name: "Chicken Supreme Pizza",
             img: Rectangle15,
             details: "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks",
@@ -211,8 +214,22 @@ export default {
             XLarge: 32.90,
           },
         ],
-      };
-    },
+        };
+      },
+    computed: {
+        filteredFood() {
+          if (this.selectFoodCategory === "All") {
+            return this.foodName
+          }
+          else if( this.selectFoodCategory == "" ){
+            return "Not avaliable"
+          } 
+          else{
+            return this.foodName.filter(food => food.food === this.selectFoodCategory)
+          }
+            
+        }
+      },
     components: {
       ShoppingBacket, ResDetails
     },
@@ -232,4 +249,8 @@ export default {
     top: 60%;
     right: 50%;
   }
+  .cursor{
+    cursor: pointer;
+  }
+  
 </style>
