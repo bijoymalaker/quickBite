@@ -43,6 +43,7 @@
 
 <script>
 export default {
+  name: "ResDetails",
   data() {
     return {
       deliveryTimes: {
