@@ -52,7 +52,7 @@
           Minimum delivery is £20. You must spend £{{ (minimumDelivery - total).toFixed(2) }} more for checkout!
         </div>
 
-        <button @mouseover="showAlert = true" @mouseleave="showAlert = false" :disabled="total < minimumDelivery" class="btn btn-primary w-100 mt-3">
+        <button @mouseover="showAlert = true" @mouseleave="showAlert = false" :disabled="total < minimumDelivery" class="btn btn-primary w-100 mt-3" @click="$emit('PreOrder')">
           <font-awesome-icon icon="fa-regular fa-circle-right" class="me-5 fs-2" /> Checkout!
         </button>
       </div>
@@ -72,6 +72,7 @@
 <script>
 export default {
   name: "ShoppingBasket",
+  emits : ['PreOrder'],
   data() {
     return {
       showAlert: false,
