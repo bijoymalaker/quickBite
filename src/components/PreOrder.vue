@@ -10,6 +10,9 @@
             <div class="text-center mb-3">
               <img :src="mealImage" alt="Meal Image" class="img-fluid rounded" />
             </div>
+            <div>
+              <h1>This is the page</h1>
+            </div>
             <h6>Please select your first Pizza</h6>
             <div class="list-group">
               <div 
